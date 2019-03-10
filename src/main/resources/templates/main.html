@@ -14,11 +14,13 @@
 <form action="/home" method="get">
     <div>
         <p>First summand:</p>
-        <input type="text" name="param1">
+        <!--/*@thymesVar id="param1" type="ru.stepanov"*/-->
+        <input type="text" name="param1" th:placeholder="${param1}">
     </div>
     <div>
         <p>Second summand:</p>
-        <input type="text" name="param2">
+        <!--/*@thymesVar id="param2" type="ru.stepanov"*/-->
+        <input type="text" name="param2" th:placeholder="${param2}">
     </div>
     <input type="submit" value="get Sum"/>
 

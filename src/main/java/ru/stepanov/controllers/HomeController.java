@@ -14,6 +14,8 @@ public class HomeController {
                        @RequestParam(name = "param2", required = false, defaultValue = "0") String param2,
                        Model model) {
         model.addAttribute("name", name);
+        model.addAttribute("param1", param1);
+        model.addAttribute("param2", param2);
 
         int sum = 0;
         if (isNumeric(param1) && isNumeric(param2)) {
