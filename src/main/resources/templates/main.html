@@ -2,10 +2,32 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Getting Started: Serving Web Content</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-<!--/*@thymesVar id="name" type="controllers"*/-->
-<p th:text="'Hello, ' + ${name} + '!'" />
+
+
+<!--/*@thymesVar id="name" type="ru.stepanov"*/-->
+<p th:text="'Hello, ' + ${name} + '!'"/>
+
+
+<form action="/home" method="get">
+    <div>
+        <p>First summand:</p>
+        <input type="text" name="param1">
+    </div>
+    <div>
+        <p>Second summand:</p>
+        <input type="text" name="param2">
+    </div>
+    <input type="submit" value="get Sum"/>
+
+    <div>
+        <!--/*@thymesVar id="sum" type="ru.stepanov"*/-->
+        <p th:text="'Sum= ' + ${sum}"/>
+    </div>
+</form>
+
+
 </body>
 </html>
