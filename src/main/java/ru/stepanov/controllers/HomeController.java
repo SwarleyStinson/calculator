@@ -15,12 +15,22 @@ public class HomeController {
                        Model model) {
         model.addAttribute("name", name);
 
-        if (param1 != null && param2 != null) {
-            int sum = Integer.parseInt(param1) + Integer.parseInt(param2);
-            model.addAttribute("sum", sum);
+        int sum = 0;
+        if (isNumeric(param1) && isNumeric(param2)) {
+            sum = Integer.parseInt(param1) + Integer.parseInt(param2);
         }
+        model.addAttribute("sum", sum);
 
         return "main";
+    }
+
+    private boolean isNumeric(String s) {
+        try {
+            Integer.parseInt(s);
+        } catch (NumberFormatException n) {
+            return false;
+        }
+        return true;
     }
 
 }
